@@ -237,6 +237,12 @@ bool FMDMetaDataEditorPropertyType::DoesMatchProperty(const FProperty* Property)
 		return false;
 	}
 
+	// Account for the change in PinSubCategroy to 'bitmask' when that flag is added into a property (int8, int32 or int64)
+	if (PropertyType == PinType.PinCategory && PinType.PinSubCategory.IsEqual(TEXT("bitmask")))
+	{
+		return true;
+	}
+
 	return PropertyType == PinType.PinCategory
 		&& PropertySubType == PinType.PinSubCategory
 		&& PropertySubTypeObject.Get() == PinType.PinSubCategoryObject
