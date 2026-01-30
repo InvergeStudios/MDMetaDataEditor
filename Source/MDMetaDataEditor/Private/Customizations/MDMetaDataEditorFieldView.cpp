@@ -2,6 +2,7 @@
 
 #include "MDMetaDataEditorFieldView.h"
 
+#include "StructUtils/UserDefinedStruct.h"
 #include "BlueprintActionDatabase.h"
 #include "Config/MDMetaDataEditorConfig.h"
 #include "Config/MDMetaDataEditorUserConfig.h"
@@ -209,7 +210,7 @@ const TMap<FName, FString>* FMDMetaDataEditorFieldView::GetMetadataMap() const
 	}
 	else if (UUserDefinedStruct* Struct = MetadataStruct.Get())
 	{
-		return UMetaData::GetMapForObject(Struct);
+		return FMetaData::GetMapForObject(Struct);
 	}
 
 	return nullptr;
