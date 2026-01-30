@@ -56,7 +56,10 @@ UMDMetaDataEditorConfig::UMDMetaDataEditorConfig()
 		FMDMetaDataKey{ TEXT("ClampMin"), EMDMetaDataEditorKeyType::Integer, TEXT("Specifies the minimum value that may be entered for the property."), TEXT("Value Range") }.SetSupportedProperties(IntegerTypes),
 		FMDMetaDataKey{ TEXT("ClampMax"), EMDMetaDataEditorKeyType::Integer, TEXT("Specifies the maximum value that may be entered for the property."), TEXT("Value Range") }.SetSupportedProperties(IntegerTypes),
 		FMDMetaDataKey{ TEXT("UIMin"), EMDMetaDataEditorKeyType::Integer, TEXT("Specifies the lowest that the value slider should represent."), TEXT("Value Range") }.SetSupportedProperties(IntegerTypes),
-		FMDMetaDataKey{ TEXT("UIMax"), EMDMetaDataEditorKeyType::Integer, TEXT("Specifies the highest that the value slider should represent."), TEXT("Value Range") }.SetSupportedProperties(IntegerTypes)
+		FMDMetaDataKey{ TEXT("UIMax"), EMDMetaDataEditorKeyType::Integer, TEXT("Specifies the highest that the value slider should represent."), TEXT("Value Range") }.SetSupportedProperties(IntegerTypes),
+		FMDMetaDataKey{ TEXT("Bitmask"), EMDMetaDataEditorKeyType::Flag, TEXT("Shows a dropdown box containing all bitmask options. Clicking on them enables or disables that flag.") }.SetSupportedProperties(IntegerTypes),
+		FMDMetaDataKey{ TEXT("BitmaskEnum"), EMDMetaDataEditorKeyType::String, TEXT("Selects the enum to use for the bitmask.") }.SetSupportedProperties(IntegerTypes).SetRequiredMetaData(TEXT("Bitmask"))
+
 	});
 
 	// Float types
